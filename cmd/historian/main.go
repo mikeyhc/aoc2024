@@ -7,6 +7,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"atmosia.net/aoc2024/historian"
 )
 
 func readList(file string) ([]int, []int) {
@@ -49,48 +51,6 @@ func readList(file string) ([]int, []int) {
 	return l0, l1
 }
 
-func intAbs(n int) int {
-	if n < 0 {
-		return -n
-	}
-
-	return n
-}
-
-func diffLists(l0, l1 []int) []int {
-	output := make([]int, len(l0))
-
-	for i, v0 := range(l0) {
-		output[i] = intAbs(l1[i] - v0)
-	}
-
-	return output
-}
-
-func sumSlice(s []int) int {
-	output := 0
-	for _, v := range(s) {
-		output += v
-	}
-
-	return output
-}
-
-func similarityScore(left, right []int) int {
-	counts := make(map[int]int)
-	score := 0
-
-	for _, v := range right {
-		counts[v] += v
-	}
-
-	for _, v := range left {
-		score += counts[v]
-	}
-
-	return score
-}
-
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Printf("usage: %s FILE\n", os.Args[0])
@@ -98,7 +58,7 @@ func main() {
 	}
 
 	list1, list2 := readList(os.Args[1])
-	diffList := diffLists(list1, list2)
-	fmt.Printf("%v\n", sumSlice(diffList))
-	fmt.Printf("%v\n", similarityScore(list1, list2))
+	diffList := historian.DiffLists(list1, list2)
+	fmt.Printf("%v\n", historian.SumSlice(diffList))
+	fmt.Printf("%v\n", historian.SimilarityScore(list1, list2))
 }
