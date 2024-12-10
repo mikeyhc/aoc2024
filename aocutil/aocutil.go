@@ -46,3 +46,13 @@ func IntLine(line string) ([]int, error) {
 
 	return output, nil
 }
+
+func SumSlice(values []int) int {
+	output := 0
+
+	for _, v := range values {
+		output += v
+	}
+
+	return output
+}
