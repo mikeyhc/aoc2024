@@ -1,9 +1,9 @@
 package reports
 
 func remove(slice []int, idx int) []int {
-	output := make([]int, 0, len(slice) - 1)
+	output := make([]int, 0, len(slice)-1)
 	output = append(output, slice[:idx]...)
-	output = append(output, slice[idx + 1:]...)
+	output = append(output, slice[idx+1:]...)
 
 	return output
 }
@@ -19,14 +19,14 @@ func isSafe(line []int, dampen bool) bool {
 	}
 
 	for i := 1; i < len(line); i++ {
-		diff := line[i] - line[i - 1]
+		diff := line[i] - line[i-1]
 		if increments {
 			if diff < 1 || diff > 3 {
 				if !dampen {
 					return false
 				}
 
-				prev := remove(line, i - 1)
+				prev := remove(line, i-1)
 				next := remove(line, i)
 				return isSafe(prev, false) || isSafe(next, false)
 			}
@@ -36,7 +36,7 @@ func isSafe(line []int, dampen bool) bool {
 					return false
 				}
 
-				prev := remove(line, i - 1)
+				prev := remove(line, i-1)
 				next := remove(line, i)
 				return isSafe(prev, false) || isSafe(next, false)
 			}

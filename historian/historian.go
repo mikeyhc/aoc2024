@@ -3,7 +3,7 @@ package historian
 func DiffLists(l0, l1 []int) []int {
 	output := make([]int, len(l0))
 
-	for i, v0 := range(l0) {
+	for i, v0 := range l0 {
 		output[i] = intAbs(l1[i] - v0)
 	}
 
@@ -35,7 +35,7 @@ func intAbs(n int) int {
 
 func SumSlice(s []int) int {
 	output := 0
-	for _, v := range(s) {
+	for _, v := range s {
 		output += v
 	}
 

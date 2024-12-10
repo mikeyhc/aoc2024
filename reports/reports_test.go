@@ -6,8 +6,8 @@ import (
 )
 
 func TestCountSafe(t *testing.T) {
-	input := []struct{
-		nums []int
+	input := []struct {
+		nums  []int
 		want0 bool
 		want1 bool
 	}{
@@ -26,14 +26,14 @@ func TestCountSafe(t *testing.T) {
 	for i, test := range input {
 		t.Run(fmt.Sprintf("test %v  - part 1", i), func(t *testing.T) {
 			got := isSafe(test.nums, false)
-			if (got != test.want0) {
+			if got != test.want0 {
 				t.Errorf("want %v got %v, had %v", test.want0, got, test.nums)
 			}
 		})
 
 		t.Run(fmt.Sprintf("test %v  - part 2", i), func(t *testing.T) {
 			got := isSafe(test.nums, true)
-			if (got != test.want1) {
+			if got != test.want1 {
 				t.Errorf("want %v got %v, had %v", test.want1, got, test.nums)
 			}
 		})

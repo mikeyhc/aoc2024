@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func ParseFile[T any](path string, parser func(string)(T, error)) ([]T, error) {
+func ParseFile[T any](path string, parser func(string) (T, error)) ([]T, error) {
 	fh, err := os.Open(path)
 	if err != nil {
 		return nil, err
@@ -33,7 +33,7 @@ func ParseFile[T any](path string, parser func(string)(T, error)) ([]T, error) {
 func IntLine(line string) ([]int, error) {
 	output := make([]int, 0)
 	for _, part := range strings.Split(line, " ") {
-		if (part == "") {
+		if part == "" {
 			continue
 		}
 

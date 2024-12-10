@@ -5,11 +5,12 @@ import (
 )
 
 func TestCountXmas(t *testing.T) {
-	input := [][]byte{{'.', '.', 'X', '.', '.', '.'},
-	                  {'.', 'S', 'A', 'M', 'X', '.'},
-					  {'.', 'A', '.', '.', 'A', '.'},
-					  {'X', 'M', 'A', 'S', '.', 'S'},
-					  {'.', 'X', '.', '.', '.', '.'}}
+	input := [][]byte{
+		{'.', '.', 'X', '.', '.', '.'},
+		{'.', 'S', 'A', 'M', 'X', '.'},
+		{'.', 'A', '.', '.', 'A', '.'},
+		{'X', 'M', 'A', 'S', '.', 'S'},
+		{'.', 'X', '.', '.', '.', '.'}}
 	want := 4
 	got := CountXmas(input)
 
@@ -19,16 +20,17 @@ func TestCountXmas(t *testing.T) {
 }
 
 func TestCountMasX(t *testing.T) {
-	input := [][]byte{[]byte(".M.S......"),
-                      []byte("..A..MSMS."),
-					  []byte(".M.S.MAA.."),
-					  []byte("..A.ASMSM."),
-					  []byte(".M.S.M...."),
-					  []byte(".........."),
-					  []byte("S.S.S.S.S."),
-					  []byte(".A.A.A.A.."),
-					  []byte("M.M.M.M.M."),
-					  []byte("..........")}
+	input := [][]byte{
+		[]byte(".M.S......"),
+		[]byte("..A..MSMS."),
+		[]byte(".M.S.MAA.."),
+		[]byte("..A.ASMSM."),
+		[]byte(".M.S.M...."),
+		[]byte(".........."),
+		[]byte("S.S.S.S.S."),
+		[]byte(".A.A.A.A.."),
+		[]byte("M.M.M.M.M."),
+		[]byte("..........")}
 	want := 9
 	got := CountMasX(input)
 

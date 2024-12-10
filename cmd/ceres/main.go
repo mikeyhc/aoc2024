@@ -14,7 +14,6 @@ func main() {
 		os.Exit(1)
 	}
 
-
 	parser := func(line string) ([]byte, error) {
 		return []byte(line), nil
 	}

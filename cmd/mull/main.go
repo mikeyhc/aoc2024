@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"atmosia.net/aoc2024/mull"
 	"atmosia.net/aoc2024/aocutil"
+	"atmosia.net/aoc2024/mull"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 
 	commands := make([]mull.Command, 0)
 	for _, line := range lines {
-		 commands = append(commands, mull.Parse([]byte(line))...)
+		commands = append(commands, mull.Parse([]byte(line))...)
 	}
 
 	values, err := mull.RunCommands(commands, false)

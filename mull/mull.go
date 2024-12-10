@@ -7,8 +7,8 @@ import (
 
 type Command struct {
 	operation int
-	op1 int
-	op2 int
+	op1       int
+	op2       int
 }
 
 const (
@@ -97,7 +97,7 @@ func RunCommands(commands []Command, enableConditionals bool) ([]int, error) {
 		switch c.operation {
 		case Mul:
 			if enabled {
-				output = append(output, c.op1 * c.op2)
+				output = append(output, c.op1*c.op2)
 			}
 		case Do:
 			if enableConditionals {

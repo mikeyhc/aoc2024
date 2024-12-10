@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"atmosia.net/aoc2024/reports"
 	"atmosia.net/aoc2024/aocutil"
+	"atmosia.net/aoc2024/reports"
 )
 
 func main() {

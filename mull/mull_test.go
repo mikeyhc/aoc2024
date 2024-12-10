@@ -19,7 +19,7 @@ func TestParse(t *testing.T) {
 	})
 
 	t.Run("complex parse", func(t *testing.T) {
-		want := []Command {
+		want := []Command{
 			{Mul, 2, 4},
 			{Dont, 0, 0},
 			{Mul, 5, 5},
@@ -34,7 +34,7 @@ func TestParse(t *testing.T) {
 }
 
 func TestRunCommands(t *testing.T) {
-	input := []Command {
+	input := []Command{
 		{Mul, 2, 4},
 		{Dont, 0, 0},
 		{Mul, 5, 5},
