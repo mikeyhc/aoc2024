@@ -30,9 +30,9 @@ func ParseFile[T any](path string, parser func(string) (T, error)) ([]T, error) 
 	return output, nil
 }
 
-func IntLine(line string) ([]int, error) {
+func IntLine(line string, sep string) ([]int, error) {
 	output := make([]int, 0)
-	for _, part := range strings.Split(line, " ") {
+	for _, part := range strings.Split(line, sep) {
 		if part == "" {
 			continue
 		}

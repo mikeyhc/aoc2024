@@ -6,3 +6,4 @@ https://adventofcode.com/2024
 * [day 2 - red-nosed reports](cmd/reports/main.go)
 * [day 3 - mull it over](cmd/mull/main.go)
 * [day 4 - ceres search](cmd/ceres/main.go)
+* [day 5 - print queue](cmd/printqueue/main.go)

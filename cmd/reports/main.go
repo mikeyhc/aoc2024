@@ -15,7 +15,7 @@ func main() {
 	}
 
 	parser := func(line string) ([]int, error) {
-		return aocutil.IntLine(line)
+		return aocutil.IntLine(line, " ")
 	}
 	lines, err := aocutil.ParseFile(os.Args[1], parser)
 	if err != nil {
